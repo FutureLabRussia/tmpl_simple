@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" client="site" method="upgrade">
+    <name>Simple</name>
+    <version>1.0.1</version>
+    <creationDate>2025-12-01</creationDate>
+    <author>Futurelab LLC by Mike J.K.</author>
+    <authorEmail>support@futurelab.ru</authorEmail>
+    <authorUrl>https://futurelab.ru</authorUrl>
+    <copyright>(C) FutureLab LLC. All rights reserved.</copyright>
+    <description>Simple template for Joomla 5/6</description>
+    <license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
+
+    <files>
+        <filename>index.php</filename>
+        <filename>templateDetails.xml</filename>
+    </files>
+
+    <positions>
+        <!-- Шапка -->
+        <position>header</position>      
+        <!-- Контент -->
+        <position>main</position>
+        <!-- Футер -->
+        <position>footer</position>
+        <position>debug</position>
+    </positions>
+</extension>
