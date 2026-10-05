@@ -51,7 +51,7 @@ $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 <body>
 
  <!-- Заголовок сайта -->
-<header>
+ <header class="header">
     <?php if ($this->countModules('header')) : ?>
     <div class="top-bar">
         <jdoc:include type="modules" name="header" style="raw" />
