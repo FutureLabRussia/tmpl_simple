@@ -36,4 +36,27 @@
         <position>footer</position>
         <position>debug</position>
     </positions>
+    <languages folder="language">
+		<language tag="en-GB">en-GB/tpl_simple.ini</language>
+		<language tag="ru-RU">ru-RU/tpl_simple.ini</language>
+	</languages>
+    <config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field
+					name="testparam"
+					type="radio"
+					label="TPL_SIMPLE_TESTPARAM"
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+					filter="boolean"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+
+    
 </extension>

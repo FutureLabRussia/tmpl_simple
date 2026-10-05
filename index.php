@@ -12,6 +12,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory; // Factory class: Содержит статические методы получения глобальных объектов из приложения Joomla. 
+use Joomla\CMS\Language\Text;
 
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 $app   = Factory::getApplication(); 
@@ -38,6 +39,10 @@ $itemid   = $app->input->getCmd('Itemid', '');
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
 $menu     = $app->getMenu()->getActive();
 $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
+
+//Get params from template styling
+//If you want to add your own parameters you may do so in templateDetails.xml
+$testparam =  $this->params->get('testparam');
 
 ?>
 <!DOCTYPE html>
@@ -70,6 +75,7 @@ $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 <?php if ($this->countModules('footer')) : ?>
     <jdoc:include type="modules" name="footer" style="raw" />
 <?php endif; ?>
+ <p><?php echo Text::_('TPL_SIMPLE_COPYRIGHT'); ?></p>
 </footer>
 
     <!-- Debug position -->
