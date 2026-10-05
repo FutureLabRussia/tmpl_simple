@@ -15,6 +15,7 @@ use Joomla\CMS\Factory; // Factory class: Содержит статически�
 
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 $app   = Factory::getApplication(); 
+$app->getDocument()->setGenerator('J-CMS');
 $wa    = $this->getWebAssetManager(); // Получем ссылку на менеджер медиа-ресурсов - используется для загрузки нашего CSS  и др. в будущем 
 
 //Файлы стилей и сриптов определены в joomla.asset.json!
@@ -22,6 +23,21 @@ $wa->useStyle('template.simple.mainstyles');
 $wa->useScript('template.simple.scripts');
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
+// Get this template's Media path
+$templatePath = '/media/templates/site/' . $this->template;
+$this->addHeadLink($templatePath . '/images/favicon.ico', 'icon', 'rel', ['type' => 'image/x-icon']);
+// Browsers support SVG favicons
+$this->addHeadLink($templatePath . '/images/favicon.svg', 'icon', 'rel', ['type' => 'image/svg+xml']);
+
+// Detecting Active Variables
+$option   = $app->input->getCmd('option', '');
+$view     = $app->input->getCmd('view', '');
+$layout   = $app->input->getCmd('layout', '');
+$task     = $app->input->getCmd('task', '');
+$itemid   = $app->input->getCmd('Itemid', '');
+$sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
+$menu     = $app->getMenu()->getActive();
+$pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 
 ?>
 <!DOCTYPE html>
