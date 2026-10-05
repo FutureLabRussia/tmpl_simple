@@ -1,11 +1,11 @@
-/* Базовый сброс стилей */
+ /* Reset Style */
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
-/* Стили для шапки */
+/* Header style */
 .header
 {
 	display: flex;
@@ -17,12 +17,12 @@
 }
 
 
-/* Навигация (десктоп) */
+/* Navigation (Desktop) */
 .mod-menu
 {
 	display: flex;
 	list-style: none;
-	gap: 1ch; /* Интервал в 1 символ между пунктами */
+	gap: 1ch;  /* 1-character interval between points */
 }
 
 .mod-menu a

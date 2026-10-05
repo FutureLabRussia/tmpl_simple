@@ -49,7 +49,6 @@ $testparam =  $this->params->get('testparam');
 <html lang="<?php echo $this->language; ?>">
 <head>
 	<jdoc:include type="metas" />
- 	 <?php // Загрузка CSS и JS файлов web asset manager ?>
 	<jdoc:include type="styles" />
 	<jdoc:include type="scripts" />
 </head>
@@ -69,6 +68,7 @@ $testparam =  $this->params->get('testparam');
 <!-- Область компонента -->
 <jdoc:include type="component" />
 
+</main>
 
 <!-- Подвал (футер) сайта -->
 <footer>     
