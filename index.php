@@ -11,11 +11,26 @@
 
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory; // Factory class: Содержит статические методы получения глобальных объектов из приложения Joomla. 
+
+/** @var Joomla\CMS\Document\HtmlDocument $this */
+$app   = Factory::getApplication(); 
+$wa    = $this->getWebAssetManager(); // Получем ссылку на менеджер медиа-ресурсов - используется для загрузки нашего CSS  и др. в будущем 
+
+//Файлы стилей и сриптов определены в joomla.asset.json!
+$wa->useStyle('template.simple.mainstyles');
+$wa->useScript('template.simple.scripts');
+$this->setMetaData('viewport', 'width=device-width, initial-scale=1');
+
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>">
 <head>
-    <jdoc:include type="metas" />
+	<jdoc:include type="metas" />
+ 	 <?php // Загрузка CSS и JS файлов web asset manager ?>
+	<jdoc:include type="styles" />
+	<jdoc:include type="scripts" />
 </head>
 <body>
 

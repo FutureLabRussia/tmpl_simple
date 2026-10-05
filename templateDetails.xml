@@ -9,11 +9,23 @@
     <copyright>(C) FutureLab LLC. All rights reserved.</copyright>
     <description>Simple template for Joomla 5/6</description>
     <license>GNU/GPL Version 2 or later - http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<inheritable>1</inheritable>
 
     <files>
         <filename>index.php</filename>
+        <filename>index.html</filename>
         <filename>templateDetails.xml</filename>
+        <filename>joomla.asset.json</filename>
     </files>
+
+    <media destination="templates/site/simple" folder="media">
+        <folder>js</folder>
+        <folder>css</folder>
+        <folder>scss</folder>
+        <folder>fonts</folder>
+        <folder>images</folder>
+        <filename>index.html</filename>
+    </media>
 
     <positions>
         <!-- Шапка -->
