@@ -44,7 +44,6 @@ $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 <html lang="<?php echo $this->language; ?>">
 <head>
 	<jdoc:include type="metas" />
- 	 <?php // Загрузка CSS и JS файлов web asset manager ?>
 	<jdoc:include type="styles" />
 	<jdoc:include type="scripts" />
 </head>
@@ -63,8 +62,7 @@ $pageclass = $menu !== null ? $menu->getParams()->get('pageclass_sfx', '') : '';
 <main>
 <!-- Область компонента -->
 <jdoc:include type="component" />
-
-
+</main>
 <!-- Подвал (футер) сайта -->
 <footer>     
 <?php if ($this->countModules('footer')) : ?>
