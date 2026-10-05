@@ -55,8 +55,8 @@ $testparam =  $this->params->get('testparam');
 </head>
 <body>
 
- <!-- Заголовок сайта -->
-<header>
+<!-- Заголовок сайта -->
+<header class="header">
     <?php if ($this->countModules('header')) : ?>
     <div class="top-bar">
         <jdoc:include type="modules" name="header" style="raw" />
