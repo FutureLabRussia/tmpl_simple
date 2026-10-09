@@ -13,6 +13,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory; // Factory class: Содержит статические методы получения глобальных объектов из приложения Joomla. 
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\HTML\HTMLHelper;
 
 /** @var Joomla\CMS\Document\HtmlDocument $this */
 $app   = Factory::getApplication(); 
@@ -20,8 +21,11 @@ $app->getDocument()->setGenerator('J-CMS');
 $wa    = $this->getWebAssetManager(); // Получем ссылку на менеджер медиа-ресурсов - используется для загрузки нашего CSS  и др. в будущем 
 
 //Файлы стилей и сриптов определены в joomla.asset.json!
-$wa->useStyle('template.simple.mainstyles');
-$wa->useScript('template.simple.scripts');
+//$wa->useStyle('template.simple.mainstyles');
+//$wa->useScript('template.simple.scripts');
+$wa->usePreset('preset.simple');
+HTMLHelper::_('bootstrap.framework');
+
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1');
 
 // Get this template's Media path

@@ -5,6 +5,12 @@
   "description": "This file contains details of the assets used by Simple template.",
   "license": "GPL-2.0-or-later",
   "assets": [
+	{
+      "name": "bootstrap.css",
+      "type": "style",
+      "uri": "media/vendor/bootstrap/css/bootstrap.min.css",
+      "version": "5.3.8"
+    },
     {
       "name": "template.simple.mainstyles",
       "description": "The default css style to use.",
@@ -21,6 +27,15 @@
       },
       "dependencies": [
         "core"
+      ]
+    },
+    {
+      "name": "preset.simple",
+      "type": "preset",
+      "dependencies": [
+        "bootstrap.css#style",
+        "template.simple.mainstyles#style",
+        "template.simple.scripts#script"
       ]
     }
   ]
